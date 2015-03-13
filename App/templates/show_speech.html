@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+
+		<style>
+		a:link {
+		color: #CC0000;}
+		a:visited {
+		color: #999999;}
+		a:hover {
+		color: #FF3300;}
+		</style>
+
+	    <div class="image">
+	        <a href="https://www.whitehouse.gov/briefing-room/speeches-and-remarks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/US-WhiteHouse-Logo.svg/1024px-US-WhiteHouse-Logo.svg.png" width="400" height="200" alt=""></a>
+	    </div>
+
+	<title>Show Speech</title>
+</head>
+<body bgcolor="#000000">
+	<font color="white">
+
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Show Speech</th>
+		</tr>
+	{% for id, speech_urls in speech_urls %}
+		<tr>
+			<td><a href="/getSpeech/{{ speech_urls }}"> {{id}} </a> </td>
+			<td><a href="{{speech_urls}}"> {{ speech_urls }} </td>
+		</tr>
+	{% endfor %}
+	</table>
+
+	</font>
+</body>
+</html>
