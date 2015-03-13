@@ -156,9 +156,21 @@ def speech_URLS_resp():
         FROM speech_urls
         ORDER BY id '''
     cur.execute(sql)
-    speech_urls = cur.fetchall()
+    speech_urls = cur.fetchmany(size=50)
     return render_template('speechurls.html', speech_urls=speech_urls)
 
+
+@app.route('/speech_urls/more/')
+def more_speech_URLS_resp():
+    cur = db.cursor()
+    db.commit()
+    sql = '''
+        SELECT id, speech_urls
+        FROM speech_urls
+        ORDER BY id '''
+    cur.execute(sql)
+    speech_urls = cur.fetchall()
+    return render_template('more_speechurls.html', speech_urls=speech_urls)
 
 
 @app.route('/getSpeechURLS/',methods=['GET','POST'])

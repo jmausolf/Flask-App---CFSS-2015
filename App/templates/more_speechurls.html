@@ -11,8 +11,6 @@
 		color: #FF3300;}
 		</style>
 
-
-
 	    <div class="image">
 	        <a href="https://www.whitehouse.gov/briefing-room/speeches-and-remarks"><img src="http://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/US-WhiteHouse-Logo.svg/1024px-US-WhiteHouse-Logo.svg.png" width="400" height="200" alt=""></a>
 	    </div>
@@ -25,13 +23,11 @@
 	<table>
 		<tr>
 			<th>ID</th>
-			<th>Speech Parser</th>
 			<th>Speech URLS</th>
 		</tr>
 	{% for id, speech_urls in speech_urls %}
 		<tr>
 			<td><a href="{{ speech_urls }}"> {{id}} </a> </td>
-			<td><object data="http://127.0.0.1:5000/getSpeech_embed/" width="300" height="150"> <embed src=http://www.web-source.net width="200" height="100"> </embed> Error: Embedded data could not be displayed. </object></td>
 			<td><a href="{{speech_urls}}"> {{ speech_urls }} </td>
 		</tr>
 	{% endfor %}
